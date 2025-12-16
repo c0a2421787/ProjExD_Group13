@@ -4,6 +4,8 @@ import random
 import os
 
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 # --- 設定 ---
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
