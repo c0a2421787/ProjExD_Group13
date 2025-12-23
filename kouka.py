@@ -18,7 +18,7 @@ RED = (255, 0, 0)       # こうかとん
 BLUE = (0, 0, 255)      # 雑魚敵
 YELLOW = (255, 215, 0)  # ボス
 GREEN = (34, 139, 34)   # 草原
-GRAY = (169, 169, 169)  # キャンパス床
+GRAY = (169, 169, 169)  # 床
 
 # 状態定数
 STATE_MAP = "MAP"
@@ -44,8 +44,6 @@ class Game:
 
         # --- 画像の読み込み ---
         try:
-            # ★ここを修正: アップロードされた画像ファイル名に変更しました
-            # figフォルダの中に village-L1.png を入れてください
             self.bg_village_original = pygame.image.load("fig/2.png")
             self.bg_village = pygame.transform.scale(self.bg_village_original, (SCREEN_WIDTH, SCREEN_HEIGHT))
         except FileNotFoundError:
@@ -148,7 +146,7 @@ class Game:
             pixel = self.bg_village.get_at((check_x, check_y))
             r, g, b = pixel[0], pixel[1], pixel[2]
 
-            # --- ★ここを修正: 茶色い道だけ歩ける判定ロジック ---
+            # --- 茶色い道だけ歩ける判定ロジック ---
             
             # 道の色（ベージュ・薄茶）の特徴:
             # 1. 基本的に明るい色である (R+G+Bがある程度大きい)
