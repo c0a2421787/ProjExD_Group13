@@ -521,15 +521,15 @@ class Game:
         self.message_log = []
 
             # 雑魚敵（1〜3体ランダム生成）
-            num_enemies = random.randint(1, 3)
-            for i in range(num_enemies):
-                x_pos = 150 + i * 180
-                self.enemies.append({
-                    "name": f"課題{i+1}",
-                    "hp": 50, "max_hp": 50, "atk": 10, "xp": 40,
-                    "color": BLUE, "rect": pygame.Rect(x_pos, 100, 100, 100),
-                    "flash_timer": 0
-                })
+        num_enemies = random.randint(1, 3)
+        for i in range(num_enemies):
+            x_pos = 150 + i * 180
+            self.enemies.append({
+                "name": f"課題{i+1}",
+                "hp": 50, "max_hp": 50, "atk": 10, "xp": 40,
+                "color": BLUE, "rect": pygame.Rect(x_pos, 100, 100, 100),
+                "flash_timer": 0
+            })
 
     def execute_turn(self, action_type):
         """
